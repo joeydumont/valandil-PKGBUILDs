@@ -1,7 +1,7 @@
 # Maintainer: Joey Dumont <joey.dumont@gmail.com>
 pkgname=python2-scitools-hg
-pkgver=r725.d861867154e2
-pkgrel=1
+pkgver=20140516
+pkgrel=2
 pkgdesc="python library for scientific computing, Mercurial version"
 arch=(any)
 url="http://code.google.com/p/scitools/"
@@ -21,7 +21,7 @@ pkgver() {
 
 package() {
   cd "$srcdir/scitools"
-  python2 setup.py install --prefix=/usr --root=$startdir/pkg || return 1
+  python2 setup.py install --root=$pkgdir
   mkdir -pv $startdir/pkg/$pkgname/usr/share/licenses/$pkgname
   install -m644 $srcdir/scitools/LICENSE $pkgdir/usr/share/licenses/$pkgname/
 }
