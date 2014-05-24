@@ -1,6 +1,6 @@
+# Maintainer: Joey Dumont <joey.dumont@gmail.com>
 # Contributor: Renan Manola <rmanola@gmail.com>
 # Contributor: Stefan Husmann <stefan-husmann@t-online.de>
-# Maintainer: Joey Dumont <joey.dumont@gmail.com>
 # Based on a modified version of the gcc PKGBUILD
 
 pkgname=gcc-gcj

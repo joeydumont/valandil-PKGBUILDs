@@ -1,5 +1,5 @@
-# Contributor: Melancholy_Dream <Melancholy_Dream@write.su>
 # Maintainer: Joey Dumont <joey.dumont@gmail.com>
+# Contributor: Melancholy_Dream <Melancholy_Dream@write.su>
 pkgname=python2-pyvtk
 pkgver=0.4.74
 pkgrel=3

@@ -1,7 +1,7 @@
+# Maintainer: Joey Dumont <joey.dumont@gmail.com>
 # Contributor: osc
 # Contributor: StefanHusmann
 # Contributor: larsrh <hupel@in.tum.de>
-# Maintainer: Joey Dumont <joey.dumont@gmail.com>
 
 pkgname=pdftk
 pkgver=2.02
