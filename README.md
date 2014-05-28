@@ -5,6 +5,7 @@ Contact: Joey Dumont <joey.dumont@gmail.com>
 PKGBUILD files for the packages I maintain on Arch Linux.
   - gcc-gcj
   - pdftk
+  - nano-svn
   - python2-pyvtk
   - python2-pyvtk-git
   - python2-scitools
