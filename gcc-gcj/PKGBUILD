@@ -4,7 +4,7 @@
 # Based on a modified version of the gcc PKGBUILD
 
 pkgname=gcc-gcj
-pkgver=4.9.0
+pkgver=4.9.1
 pkgrel=1
 pkgdesc="The GNU Compiler for Java"
 arch=('i686' 'x86_64')
@@ -17,7 +17,7 @@ optdepends=('python2: for running /usr/bin/aot-compile'
 options=('!libtool')
 install=$pkgname.install
 source=("ftp://gcc.gnu.org/pub/gcc/releases/gcc-${pkgver}/gcc-${pkgver}.tar.bz2")
-md5sums=('9709b49ae0e904cbb0a6a1b62853b556')
+md5sums=('fddf71348546af523353bd43d34919c1')
 
 build() {
   cd "$srcdir"/gcc-${pkgver}
