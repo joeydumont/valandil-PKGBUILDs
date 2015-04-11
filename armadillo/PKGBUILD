@@ -1,0 +1,39 @@
+# Maintainer: Joey Dumont <joey.dumont@gmail.com>
+# Contributor: Lucas Hermann Negri
+
+pkgname=armadillo
+pkgver=4.650.4
+pkgrel=2
+pkgdesc="C++ linear algebra library"
+arch=('i686' 'x86_64')
+url="http://arma.sourceforge.net/"
+license=('MPL 2.0')
+depends=('lapack' 'blas' 'hdf5')
+makedepends=('cmake' 'boost')
+source=("http://downloads.sourceforge.net/sourceforge/arma/$pkgname-$pkgver.tar.gz")
+sha512sums=('a548150ba5484fce35b0bc6023982939946f2f00b733dff2cd5b46101b1c344342061389cb4363cdaa04c5e3cca3278a40febe2ed705316552dd71f841c46037')
+
+prepare() {
+  # -- Make sure that ARMA_64BIT_WORD is defined on x86_64 systems (thanks gilesc!).
+  cd "${srcdir}/armadillo-$pkgver"
+  if [ "$CARCH" == "x86_64" ]; then
+    sed -i "s|// #define ARMA_64BIT_WORD|#define ARMA_64BIT_WORD|g" include/armadillo_bits/config.hpp.cmake
+  fi
+}
+
+build() {
+  if [ "$CARCH" == "x86_64" ]; then
+    ARMA64LIBDIR="-DINSTALL_LIB_DIR:PATH=/usr/lib"
+  fi
+
+  cd "${srcdir}/$pkgname-$pkgver"
+  cmake  $ARMA64LIBDIR -DCMAKE_INSTALL_PREFIX:PATH=/usr .
+  make
+}
+
+package() {
+  cd "${srcdir}/$pkgname-$pkgver"
+  make DESTDIR="${pkgdir}" install
+  install -D -m644 LICENSE.txt "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+}
+      
