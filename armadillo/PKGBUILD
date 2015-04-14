@@ -1,25 +1,20 @@
 # Maintainer: Joey Dumont <joey.dumont@gmail.com>
-# Contributor: Lucas Hermann Negri
+# Contributor: Lucas Hermann Negri <lucashnegri at gmail dot com>
 
 pkgname=armadillo
-pkgver=4.650.4
-pkgrel=2
+pkgver=5.000.0
+pkgrel=1
 pkgdesc="C++ linear algebra library"
 arch=('i686' 'x86_64')
 url="http://arma.sourceforge.net/"
 license=('MPL 2.0')
-depends=('lapack' 'blas' 'hdf5')
-makedepends=('cmake' 'boost')
-source=("http://downloads.sourceforge.net/sourceforge/arma/$pkgname-$pkgver.tar.gz")
-sha512sums=('a548150ba5484fce35b0bc6023982939946f2f00b733dff2cd5b46101b1c344342061389cb4363cdaa04c5e3cca3278a40febe2ed705316552dd71f841c46037')
-
-prepare() {
-  # -- Make sure that ARMA_64BIT_WORD is defined on x86_64 systems (thanks gilesc!).
-  cd "${srcdir}/armadillo-$pkgver"
-  if [ "$CARCH" == "x86_64" ]; then
-    sed -i "s|// #define ARMA_64BIT_WORD|#define ARMA_64BIT_WORD|g" include/armadillo_bits/config.hpp.cmake
-  fi
-}
+depends=('lapack' 'blas' 'arpack' 'superlu=4.3')
+optdepends=('hdf5')
+makedepends=('cmake')
+source=("http://downloads.sourceforge.net/sourceforge/arma/$pkgname-$pkgver.tar.gz"
+"armadillo.install")
+sha512sums=('e16dd20cb8f931985c9d3a9db637300e39bfa9043062991c1a3ee65b45d3bb1311cf313bcd18b96f2b00e905f99865cdeebad501302cd1b21a9ca038b5fa2d18'
+            '83d70581bc6fb8a6a861d2691f31027181d6e9340a68be895341461afd06a9d745345a087d2f66125bb7b2f5c1e14d1e1a86c52fb8f59a08b29b30c4e7f2508f')
 
 build() {
   if [ "$CARCH" == "x86_64" ]; then
