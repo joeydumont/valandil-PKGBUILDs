@@ -3,18 +3,17 @@
 
 pkgname=armadillo
 pkgver=5.000.0
-pkgrel=1
+pkgrel=2
 pkgdesc="C++ linear algebra library"
 arch=('i686' 'x86_64')
 url="http://arma.sourceforge.net/"
 license=('MPL 2.0')
 depends=('lapack' 'blas' 'arpack' 'superlu=4.3')
-optdepends=('hdf5')
+optdepends=('hdf5: HDF5 output')
 makedepends=('cmake')
-source=("http://downloads.sourceforge.net/sourceforge/arma/$pkgname-$pkgver.tar.gz"
-"armadillo.install")
-sha512sums=('e16dd20cb8f931985c9d3a9db637300e39bfa9043062991c1a3ee65b45d3bb1311cf313bcd18b96f2b00e905f99865cdeebad501302cd1b21a9ca038b5fa2d18'
-            '83d70581bc6fb8a6a861d2691f31027181d6e9340a68be895341461afd06a9d745345a087d2f66125bb7b2f5c1e14d1e1a86c52fb8f59a08b29b30c4e7f2508f')
+source=("http://downloads.sourceforge.net/sourceforge/arma/$pkgname-$pkgver.tar.gz")
+install=("armadillo.install")
+sha512sums=('e16dd20cb8f931985c9d3a9db637300e39bfa9043062991c1a3ee65b45d3bb1311cf313bcd18b96f2b00e905f99865cdeebad501302cd1b21a9ca038b5fa2d18')
 
 build() {
   if [ "$CARCH" == "x86_64" ]; then
