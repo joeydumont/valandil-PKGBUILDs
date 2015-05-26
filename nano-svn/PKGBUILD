@@ -1,7 +1,7 @@
 # Maintainer: Joey Dumont <joey.dumont@gmail.com>
 # Contributor: Jristz
 pkgname=nano-svn
-pkgver=4943
+pkgver=5227
 pkgrel=1
 pkgdesc="Pico editor clone with enhancements, svn version"
 arch=(i686 x86_64)
