@@ -4,7 +4,7 @@
 
 pkgname=adb
 pkgver=android.5.1.1_r3
-pkgrel=2
+pkgrel=3
 pkgdesc="adb (Android Debug Bridge CLI tool), an Android platform tool"
 arch=('i686' 'x86_64' 'armv7h')
 url="http://tools.android.com/"
@@ -14,7 +14,7 @@ makedepends=('git')
 conflicts=('adb-git')
 source=("https://android.googlesource.com/platform/system/core/+archive/android-${pkgver//android\./}.tar.gz"
         'adbMakefile')
-sha512sums=('289c723bd22932003ea923776f722841a52b3b1cea4263b4205cf50dc127c41938d819298c41cd2592ca3cbcade3ff1fa5fb3a066d6e08483d8fcbb58ef4aa57'
+sha512sums=(SKIP
             '46c5ff1938a9da99628d18904487418013fe5e150e84de88bf37000c84620e9cd20d4c0c78516ee5b1f0a150f73e4f0f801ff8f991a41a476536c4feb12101e2')
 
 build() {
